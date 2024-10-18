@@ -1,0 +1,9 @@
+---
+galaxy_info:
+  role_name: valid_due_to_meta
+  author: foo
+  description: foo
+  license: MIT
+  platforms:
+    - name: Fedora
+  min_ansible_version: "2.7"

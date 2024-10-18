@@ -1,0 +1,4 @@
+---
+# unnamed-task: All tasks should be named
+- ansible.builtin.assert:
+    fail_msg: foo

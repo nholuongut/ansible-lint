@@ -1,0 +1,24 @@
+# preamble/header comment
+---
+# initial comment
+- foo: bar
+
+- baz: # over indented
+    - qwerty
+    - foobar
+  animals: # under indented
+    - crow
+    - pig
+    - giraffe
+
+- nothing: # null
+
+- octal:
+    - 0o123 # YAML 1.2 octal
+    - 0123 # YAML 1.1 octal
+
+- integer:
+    - 0 # Not an octal. See #2071
+    - 10
+    - 9999
+  zero: 0 # Not an octal. See #2071

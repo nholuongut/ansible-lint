@@ -1,0 +1,33 @@
+---
+# spell-checker:ignore packit specfile copr epel
+specfile_path: dist/ansible-lint.spec
+actions:
+  create-archive:
+    # packit.dev service does have these module pre-installed:
+    - python3 -m build --sdist --outdir dist
+    - sh -c "ls dist/ansible-lint-*.tar.gz"
+  get-current-version:
+    - ./tools/get-version.sh
+  post-upstream-clone:
+    - ./tools/update-version.sh
+srpm_build_deps:
+  - python3-build
+  - python3-setuptools_scm
+jobs:
+  - job: copr_build
+    metadata:
+      targets:
+        # - fedora-34  # has no https://src.fedoraproject.org/rpms/python-build
+        - fedora-35
+        - fedora-36
+        # - centos-stream-9  # has no https://src.fedoraproject.org/rpms/python-build
+    trigger: pull_request
+  # - job: tests
+  #   trigger: pull_request
+  #   metadata:
+  #     targets:
+  #     - fedora-all
+  # - job: propose_downstream
+  #   trigger: release
+  #   metadata:
+  #     dist-git-branch: master

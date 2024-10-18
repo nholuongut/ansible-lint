@@ -1,0 +1,9 @@
+---
+galaxy_info:
+  role_name: invalid-due-to-meta # <-- invalid role name
+  author: foo
+  description: foo
+  license: MIT
+  platforms:
+    - name: AIX
+  min_ansible_version: "2.7"

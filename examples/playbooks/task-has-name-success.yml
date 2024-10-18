@@ -1,0 +1,9 @@
+---
+- hosts: all
+  tasks:
+    - name: This task has a name
+      ansible.builtin.command: echo "Hello World"
+    - name: Debug task with name
+      ansible.builtin.debug: msg="Hello World"
+    - name: Flush handler with name
+      ansible.builtin.meta: flush_handlers

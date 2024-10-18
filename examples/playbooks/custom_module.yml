@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  gather_facts: false
+  tags:
+    - "{{ foo }}"
+  tasks:
+    - name: Run custom module
+      fake_module: {}

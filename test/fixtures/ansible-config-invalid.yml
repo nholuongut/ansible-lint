@@ -1,0 +1,4 @@
+---
+# invalid .ansible-lint config file
+- foo
+- bar
